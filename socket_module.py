@@ -1,6 +1,15 @@
 import socketio
 import time
 import threading
+import configparser
+
+# Читання конфігурації
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Отримання IP-адреси та порту із файлу config.ini
+server_ip = config['server']['ip_address']
+server_port = config['server']['port']
 
 sio = socketio.Client()
 
@@ -8,9 +17,10 @@ def background_connect():
     """
     Фонова функція, яка постійно намагається підключитися до сервера.
     """
+    server_url = f'http://{server_ip}:{server_port}'
     while True:
         try:
-            sio.connect('http://192.168.1.107:5000')
+            sio.connect(server_url)
             print("Підключення встановлено")
             break
         except Exception as e:

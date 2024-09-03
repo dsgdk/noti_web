@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 # Завантаження конфігурації
 config = configparser.ConfigParser()
 config.read('config.ini')
+
 api_id = config.get('telegram', 'api_id')
 api_hash = config.get('telegram', 'api_hash')
 channels = config.get('channels', 'channels').split(', ')
@@ -18,22 +19,15 @@ keywords = config.get('keywords', 'keywords').split(', ')
 my_channel = config.get('personal_channel', 'my_channel')
 my_channel_link = config.get('personal_channel', 'my_channel')
 
-# Ініціалізація клієнта
-# client = SocketClient('http://192.168.1.107:5000')
-
-# Підключення до сервера
-# client.connect()
-
 # Слова, що можуть вказувати на небезпеку
-danger_keywords = ["каб", "шахед", "небезпека", "обстріл", "удар", "бомбардування", "ракета", "укриття", "укритті", "балістика", "балістики", "балістичного", "балістична", "радіус"]
+danger_keywords = config.get('danger_keywords', 'keywords').split(', ')
 
 # Слова, що можуть вказувати на новини чи зведення
-news_keywords = ["новини", "здійснили", "вдарили", "росіяни", "росія", "рф", "пошкоджено", "впали", "прикордонні", "РФ", "обстрілювала", "зазнали", "зведення", "огляд", "інформація", "репортаж", "ОК Північ", "за добу", "за минулу добу", "нанесено"]
+news_keywords = config.get('news_keywords', 'keywords').split(', ')
 
 client = TelegramClient('session_name', api_id, api_hash)
 
 def is_relevant(message):
-    """Перевіряє, чи є повідомлення релевантним на основі ключових слів та контексту небезпеки."""
     message_lower = message.lower()
 
     # Перевірка наявності ключових слів для населеного пункту
@@ -45,7 +39,7 @@ def is_relevant(message):
     # Перевірка наявності слів, що вказують на новини чи зведення
     is_news = any(news.lower() in message_lower for news in news_keywords)
     
-    # Додаткова перевірка на релевантність: повідомлення не має бути оглядом чи зведенням
+    # Додаткова перевірка на релевантність: повідомлення не має бути зведенням
     if is_news:
         return False
 
@@ -53,7 +47,6 @@ def is_relevant(message):
     return relevant_location and danger_detected
 
 def generate_alert_message(channel_name, message_text, channel_username=None):
-    """Формує повідомлення про небезпеку на основі ключових слів у повідомленні."""
     message_lower = message_text.lower()
     alert_message = ""
 
@@ -68,8 +61,6 @@ def generate_alert_message(channel_name, message_text, channel_username=None):
     # Перевірка на шахед
     elif any(kw in message_lower for kw in ["шахед", "шахеди", "шахедами", "шахедів"]):
         alert_message = f"Увага! Загроза шахедів для Глухова!\n"
-    # else:
-    #     alert_message = "Увага! Потенційна небезпека для Глухова!\n"
 
     if alert_message:
         if channel_username:
