@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="/static/images/radar.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <div class="image-container">
+        <img src="static/images/logo.png" class="centered-image">
+        <img src="static/images/rectangle.png" class="rectangle">
+        <div class="text-container">
+            <div id="text-display" class="text-overlay"></div>
+        </div>
+        
+        <button id="stop-button" class="stop-button">Стоп</button>
+        <button id="clear-button" class="clear-button">Очистити</button>
+        
+        <div class="footer">
+            <span class="footer-text">
+                Created by <a href="https://github.com/dsgdk" target="_blank" class="white-link">dsgdk</a> 
+                Designed by <a href="https://linktr.ee/vmxsll?fbclid=PAZXh0bgNhZW0CMTEAAabOXBSHAJ3I575i5avHpQlz95aFhFsq8IKW27vYoP_6DFM2x2fD-fP6FAY_aem_jOLsTjcoc8pXKEHXUm1ErA" target="_blank" class="white-link">vmxsll</a>
+            </span>
+        </div>        
+    </div>
+</body>
+</html>
