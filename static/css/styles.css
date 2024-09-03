@@ -1,102 +1,60 @@
 html, body {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* Вимкнути прокрутку */
+    height: 100vh;
+    display:         flex;
+    flex-direction:  column; /* Розташування контейнерів вертикально */
+    align-items:     center; /* Вирівнювання контейнерів по горизонталі */
+    justify-content: center; /* Центрує контейнерів по вертикалі */
+    overflow:        hidden; /* Вимкнути прокрутку */
 }
 
 body {
-    background-image: url('/static/images/background.png');
-    background-size: cover;         /* Масштабувати зображення, щоб покрило весь екран */
-    background-position: center;    /* Центрувати зображення */
-    background-repeat: no-repeat;   /* Зображення не буде повторюватися */
+    background: linear-gradient( to bottom, #080015, #441052);
 }
 
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;              /* Висота контейнера на всю висоту вікна */
+.container {
     display: flex;
-    justify-content: center;    /* Центрує горизонтально */
-    align-items: center;        /* Центрує вертикально */
+    align-items: center; /* Центрує вміст всередині контейнерів по вертикалі */
+    justify-content: center; /* Центрує вміст всередині контейнерів по горизонталі */
 }
 
-.centered-image {
-    width: 439px;               /* Встановіть потрібну ширину */
-    position: absolute;
-    top: calc(50% - 200px);     /* Розмістіть трохи вище центру по вертикалі */
-    left: calc(50% - 219px);    /* Розмістіть трішки лівіше центру по горизонталі */
+.top-container {
+    width: 616px; /* Ширина верхнього контейнера */
+    height: 80px; /* Висота верхнього контейнера */
+    /* background-color: #f88; Колір фону верхнього контейнера */
 }
 
-.rectangle {
-    position: absolute;
-    width: 610px;
+.s-container {
+    width: 616px;
     height: 221px;
-    left: calc(50% - 305px);    /* Центрує по горизонталі */
-    top: 339px;                 /* Встановлює вертикальну позицію */
+    /* background-color: #8f8; */
 }
 
-.stop-button {
+.text-container {
     position: absolute;
-    width: 134px;
-    height: 48px;
-    left: calc(50% - 134px/2 - 120px);
-    top: 580px;
-
-    background: #FFFFFF;
-    opacity: 0.9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 13px;
-    border: none;
-    cursor: pointer;
-
-    font-family: 'Gotham', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #C432F5;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 616px;
+    height: 60px;
+    /* background-color: rgb(0, 0, 0); */
+    z-index: 2;
 }
 
-.stop-button:hover {
-    background: #f0f0f0; /* Зміна кольору при наведенні */
-}
-
-.clear-button {
+.text-overlay {
     position: absolute;
-    width: 134px;
-    height: 48px;
-    left: calc(50% - 134px/2 + 120px);
-    top: 580px;
-
-    background: rgba(196, 50, 245, 0.6);
-    opacity: 0.9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 13px;
-    border: none;
-    cursor: pointer;
-
-    font-family: 'Gotham', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
+    top: 30%; /* Вертикальне центрування */
+    left: 50%; /* Горизонтальне центрування */
+    transform: translate(-50%, -50%); /* Вирівнювання по центру */
     color: #F9F9F9;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: 'Gotham', sans-serif;
+    font-size: 25px; /* Змініть на ваш розмір */
+    text-align: left;
+    width: 90%; /* Ширина текстового контейнера */
+    line-height: 1.5;
 }
 
-.clear-button:hover {
-    background: rgba(196, 50, 245, 0.8); /* Збільшує непрозорість при наведенні */
+.bottom-container {
+    width: 616px; /* Ширина нижнього контейнера */
+    height: 60px; /* Висота нижнього контейнера */
+    /* background-color: rgb(4, 245, 4); Колір фону нижнього контейнера */
 }
 
 .footer {
@@ -132,42 +90,90 @@ body {
     text-decoration: underline; /* додає підкреслення при наведенні, опціонально */
 }
 
-.text-container {
+.stop-button {
     position: absolute;
-    width: 610px;
-    height: 221px;
-    left: calc(50% - 305px);    /* Центрує по горизонталі */
-    top: 339px;                 /* Встановлює вертикальну позицію */
-}
+    width: 139px;
+    height: 48px;
+    left: calc(50% - 139px/2 - 158.5px);
+    top: 595px;
 
-.text-overlay {
-    position: absolute;
-    top: 30%; /* Вертикальне центрування */
-    left: 50%; /* Горизонтальне центрування */
-    transform: translate(-50%, -50%); /* Вирівнювання по центру */
-    color: #F9F9F9;
+    background: #FFFFFF;
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+
     font-family: 'Gotham', sans-serif;
-    font-size: 20px; /* Змініть на ваш розмір */
-    text-align: left;
-    width: 90%; /* Ширина текстового контейнера */
-    line-height: 1.5;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #C432F5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.sound-slider-container {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+.stop-button:hover {
+    background: #f0f0f0; /* Зміна кольору при наведенні */
 }
 
-@media (max-width: 768px) {
-    .second-centered-image {
-        width: 100%;
-        max-width: 610px;
-        height: auto;
-        top: 300px; /* Коригуйте вертикальну позицію для менших екранів */
-        left: 0; /* Центрування по ширині */
-        right: 0;
-        margin: 0 auto; /* Автоматичні відступи для центрованого зображення */
-    }
+.clear-button {
+    position: absolute;
+    width: 139px;
+    height: 48px;
+    left: calc(50% - 139px/2 + 159.5px);
+    top: 595px;
+
+    background: rgba(196, 50, 245, 0.6);
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Gotham', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #F9F9F9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.clear-button:hover {
+    background: rgba(196, 50, 245, 0.8); /* Збільшує непрозорість при наведенні */
+}
+
+.logo-desktop{
+    position: absolute;
+    width: 439px;
+}
+
+.rectangle {
+    position: absolute;
+    width: 616px;
+    height: 221px;
+    /* left: calc(50% - 616px/2);
+    top: 344px; */
+
+    background: rgba(196, 50, 245, 0.25);
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    z-index: 1;
+}
+
+
+/* @media (max-width: 768px) {
+    
+} */

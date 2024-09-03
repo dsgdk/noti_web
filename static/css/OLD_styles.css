@@ -1,0 +1,170 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Вимкнути прокрутку */
+}
+
+body {
+    background: linear-gradient( to bottom, #080015, #441052);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;              /* Висота контейнера на всю висоту вікна */
+    display: flex;
+    justify-content: center;    /* Центрує горизонтально */
+    align-items: center;        /* Центрує вертикально */
+}
+
+.centered-image {
+    width: 439px;               /* Встановіть потрібну ширину */
+    position: absolute;
+    top: calc(50% - 200px);     /* Розмістіть трохи вище центру по вертикалі */
+    left: calc(50% - 219px);    /* Розмістіть трішки лівіше центру по горизонталі */
+}
+
+.rectangle {
+    position: absolute;
+    width: 610px;
+    height: 221px;
+    left: calc(50% - 305px);    /* Центрує по горизонталі */
+    top: 339px;                 /* Встановлює вертикальну позицію */
+}
+
+.stop-button {
+    position: absolute;
+    width: 134px;
+    height: 48px;
+    left: calc(50% - 134px/2 - 120px);
+    top: 580px;
+
+    background: #FFFFFF;
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Gotham', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #C432F5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop-button:hover {
+    background: #f0f0f0; /* Зміна кольору при наведенні */
+}
+
+.clear-button {
+    position: absolute;
+    width: 134px;
+    height: 48px;
+    left: calc(50% - 134px/2 + 120px);
+    top: 580px;
+
+    background: rgba(196, 50, 245, 0.6);
+    opacity: 0.9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Gotham', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #F9F9F9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-button:hover {
+    background: rgba(196, 50, 245, 0.8); /* Збільшує непрозорість при наведенні */
+}
+
+.footer {
+    position: absolute;
+    width: 216px;
+    height: 41px;
+    left: calc(50% - 216px/2);
+    top: 842px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    font-family: 'Gotham', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    color: #F9F9F9;
+}
+
+.white-link {
+    color: #F9F9F9; /* встановлює білий колір для посилання */
+    text-decoration: none; /* видаляє підкреслення, якщо потрібно */
+}
+
+.white-link:hover {
+    color: #F9F9F9; /* зберігає білий колір при наведенні миші */
+    text-decoration: underline; /* додає підкреслення при наведенні, опціонально */
+}
+
+.text-container {
+    position: absolute;
+    width: 610px;
+    height: 221px;
+    left: calc(50% - 305px);    /* Центрує по горизонталі */
+    top: 339px;                 /* Встановлює вертикальну позицію */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 30%; /* Вертикальне центрування */
+    left: 50%; /* Горизонтальне центрування */
+    transform: translate(-50%, -50%); /* Вирівнювання по центру */
+    color: #F9F9F9;
+    font-family: 'Gotham', sans-serif;
+    font-size: 20px; /* Змініть на ваш розмір */
+    text-align: left;
+    width: 90%; /* Ширина текстового контейнера */
+    line-height: 1.5;
+}
+
+.sound-slider-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .second-centered-image {
+        width: 100%;
+        max-width: 610px;
+        height: auto;
+        top: 300px; /* Коригуйте вертикальну позицію для менших екранів */
+        left: 0; /* Центрування по ширині */
+        right: 0;
+        margin: 0 auto; /* Автоматичні відступи для центрованого зображення */
+    }
+}
