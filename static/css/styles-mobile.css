@@ -1,0 +1,165 @@
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        align-items: center; /* Центрує вміст всередині контейнерів по вертикалі */
+        justify-content: center; /* Центрує вміст всередині контейнерів по горизонталі */
+    }
+    
+    .top-container {
+        width: 390px; /* Ширина верхнього контейнера */
+        height: 80px; /* Висота верхнього контейнера */
+        /* background-color: #f88; */
+    }
+    
+    .logo-desktop{
+        display: none;
+    }
+    
+    .logo-mobile{
+        display: block;
+        position: absolute;
+        width: 94px;
+    }
+
+    .s-container {
+        width: 390px;
+        height: 110px;
+        /* background-color: #8f8; */
+    }
+    .rectangle {
+        position: absolute;
+        width: 255px;
+        height: 100px;
+        /* left: calc(50% - 616px/2);
+        top: 344px; */
+    
+        background: rgba(196, 50, 245, 0.25);
+        opacity: 0.9;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(2px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 20px;
+        z-index: 1;
+    }
+
+    .text-container {
+        position: absolute;
+        width: 61px;
+        height: 60px;
+        background-color: rgb(0, 0, 0);
+        z-index: 2;
+    }
+    
+    .text-overlay {
+        position: absolute;
+        top: 30%; /* Вертикальне центрування */
+        left: 50%; /* Горизонтальне центрування */
+        transform: translate(-50%, -50%); /* Вирівнювання по центру */
+        color: #F9F9F9;
+        font-family: 'Gotham', sans-serif;
+        font-size: 15px; /* Змініть на ваш розмір */
+        text-align: left;
+        width: 90%; /* Ширина текстового контейнера */
+        line-height: 1.5;
+    }
+    
+    .bottom-container {
+        width: 255px; /* Ширина нижнього контейнера */
+        height: 60px; /* Висота нижнього контейнера */
+        /* background-color: rgb(4, 245, 4); */
+    }
+
+    .footer {
+        position: absolute;
+        width: 216px;
+        height: 41px;
+        left: calc(50% - 216px/2);
+        top: 730px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-text {
+        font-family: 'Gotham', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 20px;
+        text-align: center;
+        color: #F9F9F9;
+    }
+    
+    .white-link {
+        color: #F9F9F9; /* встановлює білий колір для посилання */
+        text-decoration: none; /* видаляє підкреслення, якщо потрібно */
+    }
+    
+    .white-link:hover {
+        color: #F9F9F9; /* зберігає білий колір при наведенні миші */
+        text-decoration: underline; /* додає підкреслення при наведенні, опціонально */
+    }
+    .stop-button {
+        position: absolute;
+        width: 118px;
+        height: 48px;
+        left: 69px;
+        top: 490px;
+    
+        background: #FFFFFF;
+        opacity: 0.9;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 13px;
+        border: none;
+        cursor: pointer;
+    
+        font-family: 'Gotham', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #C432F5;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .stop-button:hover {
+        background: #f0f0f0; /* Зміна кольору при наведенні */
+    }
+    
+    .clear-button {
+        position: absolute;
+        width: 118px;
+        height: 48px;
+        left: 206px;
+        top: 490px;
+    
+        background: rgba(196, 50, 245, 0.6);
+        opacity: 0.9;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 13px;
+        border: none;
+        cursor: pointer;
+    
+        font-family: 'Gotham', sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #F9F9F9;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .clear-button:hover {
+        background: rgba(196, 50, 245, 0.8); /* Збільшує непрозорість при наведенні */
+    }
+}

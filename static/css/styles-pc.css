@@ -153,6 +153,13 @@ body {
 }
 
 .logo-desktop{
+    display: block;
+    position: absolute;
+    width: 439px;
+}
+
+.logo-mobile{
+    display: none;
     position: absolute;
     width: 439px;
 }
@@ -172,8 +179,3 @@ body {
     border-radius: 20px;
     z-index: 1;
 }
-
-
-/* @media (max-width: 768px) {
-    
-} */
