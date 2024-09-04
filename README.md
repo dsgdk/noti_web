@@ -22,7 +22,7 @@
 
     ```bash
     git clone https://github.com/dsgdk/noti_web.git
-    cd noti_v2
+    cd noti_web
     ```
 
 2. Install the required Python packages:
